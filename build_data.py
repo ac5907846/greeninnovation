@@ -21,10 +21,10 @@ from constants import FIRM_TYPES, GIF, GIF_FAMILY, LABEL, PROFILE_VARS, SHORT, S
 R1 = A / "01_sample_profile_and_cronbach_alpha (table 1, table 2)" / "results"
 R2 = A / "02_gif_mean_score_ranking_anova_spearman (table 4, fig 3)" / "results"
 R3 = A / "03_pearson_correlation_gif_ssi (table 5)" / "results"
-R4 = A / "04_stepwise_regression_gif_on_ssi (table 6, table 7, fig 4)" / "results"
-R5 = A / "05_ssi_anova_by_firm_type (table 8)" / "results"
+R4 = A / "04_stepwise_regression_gif_on_ssi (table 6, fig 4)" / "results"
+R5 = A / "05_ssi_anova_by_firm_type (table 7)" / "results"
 R6 = A / "06_case_study_five_firms (table 3, fig 5)" / "results"
-R7 = A / "07_robustness_selection_stability_and_bias_checks (table 9)" / "results"
+R7 = A / "07_robustness_selection_stability_and_bias_checks (table 8)" / "results"
 
 
 def r4(x):
@@ -34,7 +34,7 @@ def r4(x):
 def main():
     family = {x: f for f, items in GIF_FAMILY.items() for x in items}
     t4 = pd.read_csv(R2 / "table4_means_ranks_anova.csv").set_index("item")
-    t8 = pd.read_csv(R5 / "table8_ssi_means_anova.csv").set_index("item")
+    t8 = pd.read_csv(R5 / "table7_ssi_means_anova.csv").set_index("item")
     pear = pd.read_csv(R3 / "table5_pearson_r.csv", index_col=0)
     coef = pd.read_csv(R4 / "table6_coefficients.csv")
     models = pd.read_csv(R4 / "table6_models.csv").set_index("ssi")
